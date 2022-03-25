@@ -1,0 +1,29 @@
+import { Exclude } from 'class-transformer';
+import {
+  Column,
+  CreateDateColumn,
+  Generated,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+
+import { DtoUtil } from '../../../utils';
+import { AbstractDto } from '../dtos';
+
+export abstract class AbstractEntity<T extends AbstractDto = AbstractDto> {
+  @PrimaryGeneratedColumn('increment')
+  id: number;
+
+  @Column()
+  @Generated('uuid')
+  uuid: string;
+
+  @CreateDateColumn()
+  @Exclude()
+  public createdAt: Date;
+
+  abstract dtoClass: new (entity: AbstractEntity, options?: any) => T;
+
+  toDto(options?: any): T {
+    return DtoUtil.toDto(this.dtoClass, this, options);
+  }
+}
