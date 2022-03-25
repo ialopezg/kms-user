@@ -26,4 +26,13 @@ export abstract class AbstractEntity<T extends AbstractDto = AbstractDto> {
   toDto(options?: any): T {
     return DtoUtil.toDto(this.dtoClass, this, options);
   }
+
+  constructor(id: number, uuid: string, createdAt?: Date);
+  constructor(id: number, uuid?: string, createdAt?: Date);
+  constructor(id?: number, uuid?: string, createdAt?: Date);
+  constructor(id?: number, uuid?: string, createdAt?: Date) {
+    this.id = id;
+    this.uuid = uuid;
+    this.createdAt = createdAt;
+  }
 }

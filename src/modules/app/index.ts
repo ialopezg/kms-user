@@ -5,6 +5,7 @@ import { resolve } from 'path';
 import { AppController } from './controllers';
 import { AppService } from './services';
 import { DbModule } from '../db';
+import { UserModule } from '../user';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { DbModule } from '../db';
       envFilePath: resolve(process.cwd(), '../../..', '.env'),
     }),
     DbModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

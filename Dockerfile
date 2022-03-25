@@ -1,6 +1,6 @@
 FROM node:14.19.1-slim
 
-RUN npm install --global npm@latest
+RUN npm install --global npm@6.14.16
 
 RUN mkdir -p /var/www/user
 WORKDIR /var/www/user
