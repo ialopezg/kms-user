@@ -10,7 +10,12 @@ import { UserModule } from '../user';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: resolve(process.cwd(), '../../..', '.env'),
+      expandVariables: true,
+      envFilePath: !process.env.APP_MODE
+        ? process.env.APP_MODE === 'production'
+          ? resolve(process.cwd(), '../../..', '.env')
+          : resolve(process.cwd(), '../../..', '.env.development')
+        : null, // Docker launch
     }),
     DbModule,
     UserModule,

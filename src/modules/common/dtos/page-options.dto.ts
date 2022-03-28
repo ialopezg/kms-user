@@ -8,7 +8,7 @@ import {
   Max,
   Min,
 } from 'class-validator';
-import { Order } from 'src/modules/common/constants';
+import { Order } from '../constants';
 
 export class PageOptionsDto {
   @IsEnum(Order)

@@ -1,7 +1,7 @@
 import { Exclude } from 'class-transformer';
-import { AbstractEntity } from 'src/modules/common/entities';
 import { Column, Entity, UpdateDateColumn } from 'typeorm';
 
+import { AbstractEntity } from '../../common/entities';
 import { UserDto } from '../dtos';
 
 @Entity({ name: 'users' })

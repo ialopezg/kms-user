@@ -1,4 +1,4 @@
-import { AbstractDto } from 'src/modules/common/dtos';
+import { AbstractDto } from '../../common/dtos';
 import { UserEntity } from '../entities';
 
 export class UserDto extends AbstractDto {

@@ -1,10 +1,10 @@
 {
-  "name": "user",
-  "version": "0.0.5",
-  "description": "",
-  "author": "",
+  "name": "kms-user",
+  "version": "0.0.6",
+  "description": "KOLO Max Platform - Backend Server - User Service",
+  "author": "Isidro A. Lopez G. <me@ialopezg.com> (https://ialopezg.com)",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "proprietary",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
